@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Pylint - Code Quality</title>
+</head>
+<body>
+<div class="container">
+    <div class="grw-font">
+        <div class="row">
+            <div class="col">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a href="#" class="navbar-brand">
+                            <img src="images/logo.png" height="28" alt="Internet History">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pylint.html">Pylint</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="aaatesting.html">AAA Testing</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                       role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        References
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item"
+                                               href="https://www.darpa.mil/about-us/timeline/arpanet">DARPA</a></li>
+                                        <li><a class="dropdown-item"
+                                               href="https://en.wikipedia.org/wiki/History_of_the_Internet">Wikipedia</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                               href="https://www.dataversity.net/brief-history-internet-things/#">Data
+                                            Versity</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div
+                class="bg-image p-2 text-center shadow-1-strong rounded mb-2"
+        >
+            <h1 class="mb-3 h2">Debugging and Testing</h1>
+
+        </div>
+        <h3>Python Coding, Debugging and Testing</h3>
+
+        <div class="row">
+            <div class="col-9">
+                <p>
+                    If we’re coding in Java the compiler will usually lend a helping hand. But if we’re coding in a
+                    dynamic language like Python we’re on our own: we don’t have a compiler to catch bugs.
+                </p>
+                <p>
+                    <b>Pylint</b> is a tool that checks for errors in Python code, tries to enforce a coding standard
+                    and looks
+                    for code smells. It can also look for certain type errors, it can recommend suggestions about how
+                    particular blocks can be refactored and can offer you details about the code's complexity.
+                </p>
+                <p>
+                    Pylint has a lot of useful errors and warnings. but also a whole lot of highly opinionated
+                    assumptions about how our code should look. And fundamentally it treats both opinions and objective
+                    problems the same way. There’s a distinction between warnings and errors, but both useful and
+                    useless stuff is in the warning category.
+                </p>
+                <h3>Installation</h3>
+                <p>
+                    Pylint easily installable using pip command.
+                </p>
+                <p>
+                    <mark><b>pip install pylint</b></mark>
+                </p>
+
+                <h5>Source distribution installation</h5>
+
+                <p>
+                    From the source distribution, extract the tarball, go to the extracted directory and simply run
+                </p>
+                <p>
+                    <mark><b>python setup.py install</b></mark>
+                </p>
+                <p>
+                    Or you can install it in editable mode, using
+                </p>
+                <p>
+                    <mark><b>python setup.py develop</b></mark>
+                </p>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="560" height="315"
+                                src="//www.youtube.com/embed/fFY5103p5-c" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p>
+                    So here we have a tool that is potentially useful, but unused in practice. What to do?
+                </p>
+                <p>
+                    Luckily
+                    Pylint has some functionality that can help: you can configure it to only enable a limited list of
+                    lint checks.
+                </p>
+                <p>
+                    First, setup Pylint to do nothing:
+                </p>
+                <ol>
+
+                    <li>Generate an initial .pylintrc, for example by using pylint --generate-rcfile.</li>
+
+
+                    <li>Make a list of all the features you plausibly want to enable from the Pylint docs and configure
+                        .pylintrc to enable them.
+                    </li>
+                    <li> Comment them all out.
+                    </li>
+
+
+                    At this point Pylint will do no checks. Next:
+
+
+                    <li>Uncomment a small batch of checks, and run pylint.
+                    </li>
+                </ol>
+
+                <img width=500 height=250 src="images/pylint_error.jpg" alt="index"/>
+                <p>
+                    If the resulting errors are real problems, fix them. If the errors are utter garbage, delete those
+                    checks from the configuration.
+                </p>
+                <p> After fixing first error message</p>
+                <img width=500 height=250 src="images/pylint_error1.jpg" alt="index"/>
+                <p> We do see another error message "Final newline missing (missing-final-newline)". This error message
+                    clearly pointing that we have a missing line at the end. Let correct this and see how pylint results
+                    us back.</p>
+                <img width=500 height=250 src="images/pylint100per.jpg" alt="index"/>
+                <p> Above example clearly showed us that Pylint has a lot of useful errors and warnings. but also a
+                    whole
+                    lot of highly opinionated assumptions about how your code should look. </p>
+
+                <div class="modal-body">
+
+                </div>
+            </div>
+            <div class="col-3">
+
+                <p><b>Debuging Code</b></p>
+                <p>PyCharm supports pytest, providing many testing features such as:
+                </p>
+                <ul>
+                    <li>
+                        Dedicated test runner.
+                    </li>
+                    <li>Code completion for test subject.
+
+                    </li>
+                    <li>Code navigation.
+
+                    </li>
+                    <li>Detailed failing assert reports.
+                    </li>
+                    <li>Multiprocessing test execution.
+                    </li>
+                </ul>
+
+                <p><b>Parametrization</b></p>
+                <p>The Pytest framework makes it easy to write tests to support multiple
+                and complex functional testing for applications and libraries. Pytest
+                enables test parametrization at several levels, such as:</p>
+                <ul>
+                    <li>@pytest.fixture provide a fixed baseline (e.g. an instance of a class)
+                        upon which tests can reliably and repeatedly execute. Moreover,
+                        via scope controls it is possible to check how often a fixture gets
+                        called.
+                    </li>
+                    <li>
+                        @pytest.mark.parametrize allows the definition of multiple sets of
+                        arguments and fixtures for testing purpose.
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <footer class="text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4"></div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © Muhammad Hafeez (IS601)
+                <a href="http://validator.w3.org/check/referer"><img
+                        src="http://www.w3.org/Icons/valid-html40.png"
+                        alt="Valid XHTML 1.0!" height="25" width="60"/>
+                </a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+    </div>
+</div>
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+</body>
+</html>
