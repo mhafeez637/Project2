@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Object Oriented Programming (OOP)</title>
+</head>
+<body>
+<div class="container">
+    <div class="grw-font">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a href="#" class="navbar-brand">
+                            <img src="images/logo.png" height="28" alt="Python">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pylint.html">Pylint</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="aaatesting.html">AAA Testing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="oop.html#">OOP</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                       role="button" data-bs-toggle="dropdown" aria-expanded="false"> References </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li>
+                                            <a class="dropdown-item"
+                                               href="https://www.darpa.mil/about-us/timeline/arpanet">DARPA</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                               href="https://en.wikipedia.org/wiki/History_of_the_Internet">Wikipedia</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                               href="https://www.dataversity.net/brief-history-internet-things/#">Data
+                                                Versity</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="bg-image p-2 text-center shadow-1-strong rounded mb-2">
+            <h1 class="mb-3 h2">SOLID Object Oriented Design</h1>
+        </div>
+        <h3>SOLID Object Oriented Design</h3>
+        <div class="row">
+            <div>
+                <p> These principles establish practices that lend to developing software with considerations for
+                    maintaining and extending as the project grows. Adopting these practices can also contribute to
+                    avoiding code smells, refactoring code, and Agile or Adaptive software development.
+                </p>
+                <p>SOLID stands for:
+                </p>
+                <ul>
+                    <p><b>S</b> - Single-responsiblity Principle
+                    <p><b>O</b> - Open-closed Principle
+                    </p>
+                    <p>
+                        <b>L</b> - Liskov Substitution Principle
+                    </p>
+                    <p>
+                        <b>I</b> - Interface Segregation Principle
+                    </p>
+                    <p>
+                        <b>D</b> - Dependency Inversion Principle
+                    </p>
+                </ul>
+                <h4>Single-Responsibility Principle</h4>
+                <p>Single-responsibility Principle (SRP) states:</p>
+
+                <p> class should have one and only one reason to change, meaning that a class should have only one
+                    job.</p>
+
+                <p>In the Calculator example, We have to apply different operators like addition, subtraction, multiply
+                    and division.
+                </p>
+                <p> First, create the Addition classes and have the constructors set up the required parameters.
+                </p>
+                <img width=500 height=300 src="images/addition.jpg" alt="index"/>
+                <p>Next, create the Calculations class and then write up the logic to sum up the numbers.</p>
+                <img width=500 height=300 src="images/calculation.jpg" alt="index"/>
+
+                <h4>Open-Closed Principle</h4>
+                <p>Open-closed Principle (OCP) states:</p>
+
+                <p> Objects or entities should be open for extension but closed for modification.
+                </p>
+                This means that a class should be extendable without modifying the class itself.
+                <p>
+                    Calculations class we can extend and add other object like multiply and division or history to
+                    extend it. We can without modifying exiting parent classes we can extend calculator and introduce
+                    new operator.
+                </p>
+
+                <img width=500 height=300 src="images/calculationext.jpg" alt="index"/>
+                <h4>Liskov Substitution Principle</h4>
+                <p>This means that every subclass or derived class should be substitutable for their base or parent
+                    class.</p>
+                <p>
+                    We have coded every class separately and used the hierarchy method WHich helped us to extend the
+                    calculator without causing any negative impact on existing code
+                </p>
+                <img width=500 height=300 src="images/hierarchy.jpg" alt="index"/>
+                <h4>Interface Segregation Principle</h4>
+                <p>Make fine grained interfaces that are client specific Clients should not be forced to depend upon
+                    interfaces that they do not use. This principle deals with the disadvantages of implementing big
+                    interfaces.
+                </p>
+                <p>In Calculator single class we have implemented several interfaces. So we can provide a single
+                    implementation for all the common methods between the interfaces. The segregated interfaces will
+                    also force us to think of our code more from the client’s point of view, which will in turn lead to
+                    loose coupling and easy testing. So, not only have we made our code better to our clients, we also
+                    made it easier for ourselves to understand, test and implement.</p>
+                <img width=500 height=300 src="images/calculator.jpg" alt="index"/>
+                <h4>Dependency Inversion Principle</h4>
+                <p>Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.</p>
+                <p>Calculation class is dependent on low level class. If we are looking to add another function to out calculator then we have to introduce another object or update existing object.</p>
+            </div>
+        </div>
+        <footer class="text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4"></div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);"> © Muhammad Hafeez (IS601) <a
+                    href="http://validator.w3.org/check/referer">
+                <img src="http://www.w3.org/Icons/valid-html40.png" alt="Valid XHTML 1.0!" height="25" width="60"/>
+            </a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+</div>
+<!-- Optional JavaScript; choose one of the two! -->
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+</body>
+</html>
